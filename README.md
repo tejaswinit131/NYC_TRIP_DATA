@@ -1,75 +1,56 @@
-# NYC_TRIP_DATA
-
-New York Taxi Trip Data Processing
+NYC Trip Data
+Project Overview
 This project processes New York Taxi Trip data for the year 2019 to derive analytical insights and load the processed data into a SQLite database for further analysis.
 
 Environment Setup
-Firstly I Ensure that i have the following Python packages installed:
+Ensure the following Python packages are installed:
 
-Python 3.7+,
-Pandas,
-Requests,
-TQDM,
-SQLite3,
-Matplotlib,
+Python 3.7+
+Pandas
+Requests
+TQDM
+SQLite3
+Matplotlib
 Seaborn
+Install the required packages using:
 
-
-I install the required packages using pip install
-
-
-[pip install pandas requests tqdm matplotlib seaborn sqlite3]
-
+bash
+Copy code
+pip install pandas requests tqdm matplotlib seaborn
 Project Structure
 The project contains the following scripts:
 
-EXTRACTION PART:
-
+Extraction Part
 NYC_TRIP_DATA_EXTRACTION.ipynb
-I Extracted taxi trip data for the year 2019 for three months .i tried to do for a year and also for six months but i get Fatal error:[ The Python kernel is unresponsive.]
-i tried to solve it i did following steps and the steps are:
-1]restart cluster 
-2]incresed cluster size
-3]Optimize Code
 
-I reviewed code for any inefficient operations, such as unnecessary loops, large data processing in memory, or operations that could be optimized.
-used Spark's built-in functions and capabilities for distributed processing to handle large datasets more efficiently.
-i extracted data for a year but i get error in processing part because of large datasets.
-thus i extracted only 3 months parquet files and copied in databricks catlog .
+I extracted taxi trip data for three months in 2019. Attempting to process data for the entire year or six months resulted in a fatal error: "The Python kernel is unresponsive." To address this, I:
 
-PROCESSING PART:
+Restarted the cluster.
+Increased cluster size.
+Optimized the code.
+I reviewed the code for inefficient operations, such as unnecessary loops or large data processing in memory, and utilized Spark's built-in functions for distributed processing.
 
+Finally, I extracted data for three months and copied the parquet files into the Databricks catalog.
+
+Processing Part
 NYC_TRIP_DATA_PROCESSING.ipynb
 
-when i extracted the parquet files , seen their schemas of each file by using df.printSchema() and i seen that data there is "For-Hire Vehicle Trip Records" 
-named files doesn't have required column . thus i skipped those files and applied transformation on remaining files .
+After extracting the parquet files, I checked their schemas using df.printSchema(). The "For-Hire Vehicle Trip Records" files lacked the required columns, so I skipped these files and applied transformations to the remaining ones.
 
-Processed the extracted data.
-apllied transformation like Cleans and transforms the data for analysis.
-Handles large datasets efficiently.
-I also done following transformation like
-Remove any trips that have missing or corrupt data.
-Derive new columns such as trip duration and average speed.
-Aggregate data to calculate total trips and average fare per day.
-And i also showed five records of each transformed df.
+Transformations included:
 
+Cleaning and transforming the data for analysis.
+Removing trips with missing or corrupt data.
+Deriving new columns such as trip duration and average speed.
+Aggregating data to calculate total trips and average fare per day.
+I displayed five records of each transformed DataFrame.
 
-LOADING PART:
-i write the scrips for loading processed data into a SQLite database.
-also created necessary tables and indexes.
+Loading Part
+I wrote scripts to load processed data into a SQLite database, creating necessary tables and indexes.
 
-after loading part my system doesn't support.
-so i only write the codes for analysis but i haven't cheaked it .
-so please also consider the analysis part.
+Due to system limitations, I couldn't execute the analysis. I wrote the analysis code but haven't checked it.
 
-
-ANALYASIS PART:
+Analysis Part
 NYC_TRIP_DATA_ANALYSIS.ipynb
 
-
-
-
-
-
-
-
+The analysis script is included but untested due to the system's performance issues.
