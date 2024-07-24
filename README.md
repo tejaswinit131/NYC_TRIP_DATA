@@ -6,12 +6,12 @@ This project processes New York Taxi Trip data for the year 2019 to derive analy
 Environment Setup
 Firstly I Ensure that i have the following Python packages installed:
 
-Python 3.7+
-Pandas
-Requests
-TQDM
-SQLite3
-Matplotlib
+Python 3.7+,
+Pandas,
+Requests,
+TQDM,
+SQLite3,
+Matplotlib,
 Seaborn
 
 
