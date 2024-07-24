@@ -4,7 +4,7 @@ New York Taxi Trip Data Processing
 This project processes New York Taxi Trip data for the year 2019 to derive analytical insights and load the processed data into a SQLite database for further analysis.
 
 Environment Setup
-Ensure you have the following Python packages installed:
+Firstly I Ensure that i have the following Python packages installed:
 
 Python 3.7+
 Pandas
@@ -13,53 +13,50 @@ TQDM
 SQLite3
 Matplotlib
 Seaborn
-You can install the required packages using pip:
 
 
-pip install pandas requests tqdm matplotlib seaborn sqlite3
+I install the required packages using pip install
+
+
+[pip install pandas requests tqdm matplotlib seaborn sqlite3]
 
 Project Structure
 The project contains the following scripts:
 
-data_extraction.py:
+EXTRACTION PART:
 
-Extracts taxi trip data for the year 2019.
-Downloads and saves parquet files from a given source.
-data_processing.py:
+NYC_TRIP_DATA_EXTRACTION.ipynb
+I Extracted taxi trip data for the year 2019 for three months .i tried to do for a year and also for six months but i get Fatal error:[ The Python kernel is unresponsive.]
+i tried to solve it i did following steps and the steps are:
+1]restart cluster 
+2]incresed cluster size
+3]Optimize Code
 
-Processes the extracted data.
-Cleans and transforms the data for analysis.
+I reviewed code for any inefficient operations, such as unnecessary loops, large data processing in memory, or operations that could be optimized.
+used Spark's built-in functions and capabilities for distributed processing to handle large datasets more efficiently.
+i extracted data for a year but i get error in processing part because of large datasets.
+thus i extracted only 3 months parquet files and copied in databricks catlog .
+
+PROCESSING PART:
+
+NYC_TRIP_DATA_PROCESSING.ipynb
+
+Processed the extracted data.
+apllied transformation like Cleans and transforms the data for analysis.
 Handles large datasets efficiently.
-data_loading.py:
 
-Loads the processed data into a SQLite database.
-Creates necessary tables and indexes.
-data_analysis.py:
+LOADING PART:
+i write the scrips for loading processed data into a SQLite database.
+also created necessary tables and indexes.
 
-Generates visualizations and insights from the processed data.
-Includes charts for peak hours of taxi usage, effects of passenger count on fare, and usage trends over the year.
-
-nyc-taxi-data-processing
-Run the data extraction script:
-python data_extraction.py
+after loading part my system doesn't support.
+so i only write the codes for analysis but i haven't cheaked it .
+so please also consider the analysis part.
 
 
-Run the data processing script:
-python data_processing.py
+ANALYASIS PART:
+NYC_TRIP_DATA_ANALYSIS.ipynb
 
-
-Load the processed data into SQLite:
-python data_loading.py
-
-
-Generate visualizations:
-python data_analysis.py
-Data Analysis
-This project includes visualizations to analyze:
-
-Peak Hours for Taxi Usage: Identifies the hours with the highest taxi trip frequency.
-Effect of Passenger Count on Trip Fare: Examines how the number of passengers affects the trip fare.
-Trends in Taxi Usage Over the Year: Analyzes taxi usage trends throughout the year.
 
 
 
