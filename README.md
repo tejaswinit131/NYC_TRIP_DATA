@@ -41,9 +41,18 @@ PROCESSING PART:
 
 NYC_TRIP_DATA_PROCESSING.ipynb
 
+when i extracted the parquet files , seen their schemas of each file by using df.printSchema() and i seen that data there is "For-Hire Vehicle Trip Records" 
+named files doesn't have required column . thus i skipped those files and applied transformation on remaining files .
+
 Processed the extracted data.
 apllied transformation like Cleans and transforms the data for analysis.
 Handles large datasets efficiently.
+I also done following transformation like
+Remove any trips that have missing or corrupt data.
+Derive new columns such as trip duration and average speed.
+Aggregate data to calculate total trips and average fare per day.
+And i also showed five records of each transformed df.
+
 
 LOADING PART:
 i write the scrips for loading processed data into a SQLite database.
